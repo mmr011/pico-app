@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './Styles/App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,38 +7,40 @@ class App extends React.Component {
     this.state = {
       test: ""
     }
+
+    this.getResponse = this.getResponse.bind(this);
+    this.getNewResponse = this.getNewResponse.bind(this);
   }
 
-  getResponseOnMount () {
+  getResponse () {
     return fetch('http://localhost:3001')
-      .then(response => response.json());
+      .then(response => response.json())
+      .then(jsonResponse => {
+        this.setState({
+          test: jsonResponse.message
+        });
+      });
   }
 
-  componentDidMount() {
-    this.getResponseOnMount()
-      .then(response => this.setState({
-        test: response.message
-      }));
+  getNewResponse() {
+    return fetch('http://localhost:3001/test')
+      .then(response => response.json())
+      .then(jsonResponse => {
+        this.setState({
+          test: jsonResponse.message
+        })
+      });
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
+        <p>
           Test
-          </p>
-          <p>{this.state.test}</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        </p>
+        <button onClick={this.getResponse}>Test Button 1</button>
+        <button onClick={this.getNewResponse}>Test Button2</button>
+        <p>{this.state.test}</p>
       </div>
     );
   }
