@@ -1,3 +1,23 @@
+html {
+  color: #e1dede;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+}
+
+h1 {
+  font-family: "Kanit", sans-serif;
+}
+
+#title {
+  background-color: rgba(255, 165, 24, 0.85);
+  font-size: 3rem;
+  color: #26303d;
+  padding: 40px 100px;
+}
+#title span {
+  color: #e1dede;
+}
+
 .App {
   background-image: url("./background-img.jpg");
   background-position: center;
@@ -8,7 +28,22 @@
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
-  color: white;
+}
+.App .header {
+  background: #26303d;
+  height: 30px;
+  width: 100%;
+}
+.App .container {
+  background-color: #ff6d1d;
+  padding: 0 10%;
+  padding-bottom: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.App .container a {
+  margin: 0 10px;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=App.css.map */

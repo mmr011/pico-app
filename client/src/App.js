@@ -34,14 +34,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <p>
-          Test
-        </p>
-        <button onClick={this.getResponse}>Test Button 1</button>
-        <button onClick={this.getNewResponse}>Test Button2</button>
-        <p>{this.state.test}</p>
-      </div>
+        <div className="App">
+          <header className='header'>
+            <button>Infción</button>
+            <button>Contacto</button>
+          </header>
+          <h1 id='title'>Pico <span>y</span> Pala</h1>
+          <div className='container'>
+            <p>Escoja para encontrar la finca que hace entrega de sus
+            cosechas entre las áreas de Puerto Rico.</p>
+            <a>Área Metro</a>
+            <a>Área Norte</a>
+            <a>Área Sur</a>
+            <a>Área Este</a>
+            <a>Área Oeste</a>
+          </div>
+        </div>
     );
   }
 }

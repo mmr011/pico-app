@@ -1,6 +1,28 @@
-$background-color: #6f2c39;
 $background-img: url('./background-img.jpg');
-$color: white;
+$silver: hsla(0,4.8%,87.6%, 1);
+$papaya: hsla(36.6,100%,54.7%, .85);
+$orange: hsla(21.2,100%,55.7%, 1);
+$grey: hsla(213.9,23.2%,19.4%, 1);
+
+html {
+  color: $silver;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+  font-family: 'Kanit', sans-serif;
+}
+
+#title {
+  background-color:$papaya ;
+  font-size: 3rem;
+  color: $grey;
+  padding: 40px 100px;
+  span {
+    color: $silver;
+  }
+}
 
 .App {
   background-image: $background-img;
@@ -11,7 +33,21 @@ $color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
   font-size: 1rem;
-  color: $color;
+  .header{
+    background: $grey;
+    height: 30px;
+    width: 100%;
+  }
+  .container {
+    background-color: $orange;
+    padding: 0 10%;
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+    text-align: center;
+    a {
+      margin: 0 10px;
+      text-decoration: underline;
+    }
+  }
 }
