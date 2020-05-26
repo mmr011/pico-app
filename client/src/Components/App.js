@@ -1,54 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/App.css';
-import AreaPicker from './AreaPicker'
+import AreaPicker from './AreaPicker';
+import finder from '../Util/finder';
 
 const App = () =>  {
-  const [farms, setFarms] = useState({
-    test: ""
-  });
-
-  const getData = async (route) => {
-    let response;
-    if(route === undefined) {
-      response = await fetch(`http://localhost:3001/`);
-    } else {
-      response = await fetch(`http://localhost:3001/${route}`);
-    };
-    const body = await response.json();
-    return body;
-  }
-
-  const fetchOnMount = async () => {
-    const response = await fetch('http://localhost:3001/');
-    const body = await response.json();
-    return body;
-  }
+  const [farms, setFarms] = useState([]);
 
   useEffect(() => {
-    fetchOnMount()
+    finder()
       .then(response => {
-        console.log(response.message);
-        setFarms({
-          test: response.message
-        });
+        console.log(response);
+        setFarms(response)
       });
   }, []);
 
-  const getNewResponse = async () => {
-    getData('test')
+  const getNewResponse = () => {
+    finder('test')
       .then(response => {
-        setFarms({
-          test: response.message
-        })
+        setFarms(response)
       });
   };
 
-  const getOriginalResponse = async () => {
-    getData()
+  const getOriginalResponse = () => {
+    finder()
       .then(response => {
-        setFarms({
-          test: response.message
-        });
+        setFarms(response);
       });
   };
 
@@ -59,12 +35,13 @@ const App = () =>  {
         <button onClick={getNewResponse}>Informació</button>
       </header>
       <h1 id='title'>Pico <span>y</span> Pala</h1>
-      <p>{farms.test}</p>
       <div className='container'>
-        <AreaPicker farms={farms}/>
+        <AreaPicker
+          setFarms={setFarms}
+          farms={farms}/>
       </div>
     </div>
   );
-}
+};
 
 export default App;

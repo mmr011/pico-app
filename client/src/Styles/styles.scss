@@ -39,15 +39,18 @@ h1{
     height: 30px;
     width: 100%;
   }
-  .container {
-    background-color: $orange;
-    padding: 0 10%;
-    padding-bottom: 5px;
-    font-size: 1.3rem;
-    text-align: center;
-    a {
-      margin: 0 10px;
-      text-decoration: underline;
-    }
+
+}
+.container {
+  background-color: $orange;
+  padding: 0 1%;
+  padding-bottom: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+  li {
+    display: inline-flex;
+    text-decoration: underline;
+    margin: 0 15px;
+    cursor: pointer; 
   }
 }

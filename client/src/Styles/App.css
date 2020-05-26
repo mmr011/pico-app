@@ -34,16 +34,19 @@ h1 {
   height: 30px;
   width: 100%;
 }
-.App .container {
+
+.container {
   background-color: #ff6d1d;
-  padding: 0 10%;
+  padding: 0 1%;
   padding-bottom: 5px;
   font-size: 1.3rem;
   text-align: center;
 }
-.App .container a {
-  margin: 0 10px;
+.container li {
+  display: inline-flex;
   text-decoration: underline;
+  margin: 0 15px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */
