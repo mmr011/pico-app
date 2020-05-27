@@ -20,7 +20,7 @@ h1 {
 
 .App {
   background-image: url("./background-img.jpg");
-  background-position: center;
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -36,17 +36,53 @@ h1 {
 }
 
 .container {
-  background-color: #ff6d1d;
+  background-color: rgba(255, 109, 29, 0.9);
+  margin-bottom: 5%;
   padding: 0 1%;
   padding-bottom: 5px;
+  max-width: 54rem;
   font-size: 1.3rem;
   text-align: center;
 }
-.container li {
+.container a {
   display: inline-flex;
   text-decoration: underline;
   margin: 0 15px;
   cursor: pointer;
+}
+.container li {
+  list-style-type: none;
+}
+
+.farm-list {
+  width: auto;
+}
+
+.farm {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 5px;
+  padding: 10px;
+  width: 23rem;
+  height: auto;
+  background-color: #e1dede;
+  color: #26303d;
+}
+.farm h3 {
+  font-family: "Kanit", sans-serif;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+.farm h6 {
+  float: left;
+  margin: 5px 10px;
+}
+.farm ul {
+  padding: 0;
+}
+.farm li {
+  align-items: flex-start;
 }
 
 /*# sourceMappingURL=App.css.map */

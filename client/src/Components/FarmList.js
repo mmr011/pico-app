@@ -3,10 +3,10 @@ import Farm from './Farm';
 
 const FarmList = props => {
   return (
-    <div>
+    <div className="farm-list">
     {
       props.farms.map(farm => {
-        return <Farm farm={farm} key={farm.key} />
+        return <Farm farm={farm} key={farm.id} />
       })
     }
     </div>

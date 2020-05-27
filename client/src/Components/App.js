@@ -5,6 +5,7 @@ import finder from '../Util/finder';
 
 const App = () =>  {
   const [farms, setFarms] = useState([]);
+  const [hide, setHide] = useState(false);
 
   useEffect(() => {
     finder()
@@ -13,6 +14,12 @@ const App = () =>  {
         setFarms(response)
       });
   }, []);
+
+  const isHiding = () => {
+    if(hide === true) {
+      console.log('not hiding');
+    }
+  }
 
   const getNewResponse = () => {
     finder('test')
@@ -32,7 +39,8 @@ const App = () =>  {
     <div className="App">
       <header className='header'>
         <button onClick={getOriginalResponse}>Contacto</button>
-        <button onClick={getNewResponse}>Informació</button>
+        <button onClick={() => setHide(true)}>Informació</button>
+        {isHiding()}
       </header>
       <h1 id='title'>Pico <span>y</span> Pala</h1>
       <div className='container'>
