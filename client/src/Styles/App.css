@@ -68,6 +68,7 @@ h1 {
   height: auto;
   background-color: #e1dede;
   color: #26303d;
+  fade-in: #e1dede, 1;
 }
 .farm h3 {
   font-family: "Kanit", sans-serif;
@@ -83,6 +84,24 @@ h1 {
 }
 .farm li {
   align-items: flex-start;
+}
+
+.farm-enter {
+  opacity: 0;
+}
+
+.farm-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.farm-exit {
+  opacity: 1;
+}
+
+.farm-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
 }
 
 /*# sourceMappingURL=App.css.map */

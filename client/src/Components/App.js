@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import '../Styles/App.css';
 import AreaPicker from './AreaPicker';
+import Contacts from './Contacts';
+import Info from './Info';
 import finder from '../Util/finder';
 
 const App = () =>  {
   const [farms, setFarms] = useState([]);
-  const [hide, setHide] = useState(false);
+  const [toggleInfo, setInfo] = useState(false);
+  const [toggleContact, setContact] = useState(false);
 
   useEffect(() => {
     finder()
       .then(response => {
         console.log(response);
         setFarms(response)
-      });
+      })
+    return () => {
+      console.log('unmount');
+    };
   }, []);
 
   const isHiding = () => {
-    if(hide === true) {
-      console.log('not hiding');
+    if(toggleContact) {
+      console.log('shown');
+      return (
+        <Info />
+      );
     }
   }
 
@@ -38,8 +47,7 @@ const App = () =>  {
   return (
     <div className="App">
       <header className='header'>
-        <button onClick={getOriginalResponse}>Contacto</button>
-        <button onClick={() => setHide(true)}>Informació</button>
+        <button onClick={() => setInfo(!toggleInfo)}>¿Qué es Pico y Pala?</button>
         {isHiding()}
       </header>
       <h1 id='title'>Pico <span>y</span> Pala</h1>
@@ -48,6 +56,9 @@ const App = () =>  {
           setFarms={setFarms}
           farms={farms}/>
       </div>
+      <footer>
+        <span onClick={() => setContact(!toggleContact)}>Martín Molina</span>
+      </footer>
     </div>
   );
 };

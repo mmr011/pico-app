@@ -2,8 +2,10 @@ import React from 'react';
 import Farm from './Farm';
 
 const FarmList = props => {
-  return (
-    <div className="farm-list">
+  const farms = props.farms;
+return (
+    <div
+      className="farm-list">
     {
       props.farms.map(farm => {
         return <Farm farm={farm} key={farm.id} />
@@ -11,6 +13,6 @@ const FarmList = props => {
     }
     </div>
   )
-}
+};
 
 export default FarmList;

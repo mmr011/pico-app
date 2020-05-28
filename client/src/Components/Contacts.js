@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contacts = props => {
   return (
-    <div></div>
+    <div className='contacts'>this is a contact modal</div>
   )
 };
 

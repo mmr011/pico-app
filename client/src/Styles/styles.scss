@@ -74,6 +74,7 @@ h1{
   height: auto;
   background-color: $silver;
   color: $grey;
+  fade-in:($silver, 1);
   h3 {
     font-family: 'Kanit', sans-serif;
     text-decoration: underline;

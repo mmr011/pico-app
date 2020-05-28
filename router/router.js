@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
 router.get('/test', (req, res) => {
   res.json([
     {
-      id: 4,
+      id: 6,
       name: 'Finca Caracoles',
       areaOfDelivery: ['Norte', 'Metro', 'Este'],
       productType: ['frutas', 'vegetales'],
@@ -56,7 +56,7 @@ router.get('/test', (req, res) => {
 router.get('/test2', (req, res) => {
   res.json([
     {
-      id: 5,
+      id: 7,
       name: 'Hacienda Don Pedro',
       areaOfDelivery: ['Este', 'Sur'],
       productType: ['frutas', 'Vegetales', 'Viandas'],
