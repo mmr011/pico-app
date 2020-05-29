@@ -1,36 +1,24 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Fade from 'react-reveal/Fade';
 
-const style = {
-  opacity: 1,
-  transition: "opacity 500ms ease-out"
-}
-
-const Farm = props => {
-  const [fade, changeFade] = useState({
-    opacity: 0,
-    transition: "all 500ms ease-out"
-  });
-
+const Farm = ({ farm }) => {
+  const [fade, setFade] = useState(false)
   useEffect(() => {
-    changeFade({
-      opacity: 1,
-      transition: "all 500ms ease-out"
-    });
+    setFade(true);
     return () => {
-      changeFade({
-        opacity: 0,
-        transition: "all 500ms ease-out"
-      })
+      setFade(false);
     }
-  }, [props.farm.id]);
+  }, [farm])
 
   return (
-    <div style={fade} className='farm'>
-      <h3>{props.farm.name}</h3>
-      <h6>Entregas a: {props.farm.areaOfDelivery.join(', ')}</h6>
-      <h6>Productos: {props.farm.productType.join(', ')}</h6>
-      <h6>Contactos: {props.farm.contacts.join(', ')}</h6>
-    </div>
+    <Fade cascade when={fade} mountOnEnter={true} umountOnExit={true} >
+      <div className='farm'>
+        <h3>{farm.name}</h3>
+        <h6>Entregas a: {farm.areaOfDelivery.join(', ')}</h6>
+        <h6>Productos: {farm.productType.join(', ')}</h6>
+        <h6>Contactos: {farm.contacts.join(', ')}</h6>
+      </div>
+    </Fade>
   )
 };
 

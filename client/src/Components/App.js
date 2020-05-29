@@ -16,19 +16,14 @@ const App = () =>  {
         console.log(response);
         setFarms(response)
       })
-    return () => {
-      console.log('unmount');
-    };
   }, []);
 
-  const isHiding = () => {
+  const contactsIsHiding = () => {
     if(toggleContact) {
       console.log('shown');
-      return (
-        <Info />
-      );
+      return <Contacts />;
     }
-  }
+  };
 
   const getNewResponse = () => {
     finder('test')
@@ -48,7 +43,7 @@ const App = () =>  {
     <div className="App">
       <header className='header'>
         <button onClick={() => setInfo(!toggleInfo)}>¿Qué es Pico y Pala?</button>
-        {isHiding()}
+        {contactsIsHiding()}
       </header>
       <h1 id='title'>Pico <span>y</span> Pala</h1>
       <div className='container'>

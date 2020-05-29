@@ -1,33 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FarmList from './FarmList.js';
 import finder from '../Util/finder.js'
 
-const AreaPicker = props => {
-    // const [area, setArea] = useState('');
+const AreaPicker = ({farms, setFarms}) => {
+    const style = {
+      transition: 'height easi-in'
+    };
 
     const metro = () => {
       finder('test')
         .then(response => {
-          props.setFarms(response);
+          setFarms(response);
         });
     };
 
     const original = () => {
       finder()
         .then(response => {
-          props.setFarms(response); })
+          setFarms(response); })
     }
   return (
-    <div>
+    <div style={style}>
     <p>Escoja para encontrar la finca que hace entrega de sus
      cosechas entre las áreas de Puerto Rico.</p>
-        <a onClick={metro}>Metro</a>
-        <a onClick={original}>Norte</a>
-        <a>Sur</a>
-        <a>Este</a>
-        <a>Oeste</a>
-        <a>Centro</a>
-      <FarmList farms={props.farms}/>
+        <span onClick={metro}>Metro</span>
+        <span onClick={original}>Norte</span>
+        <span>Sur</span>
+        <span>Este</span>
+        <span>Oeste</span>
+        <span>Centro</span>
+      <FarmList farms={farms}/>
     </div>
   );
 };
