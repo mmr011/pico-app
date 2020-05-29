@@ -1,45 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
+const {mongoose, Farm} = require('./database');
 
 router.get('/', (req, res) => {
-  res.json([
-    {
-      id: 1,
-      name: 'Hacienda Esperansa',
-      areaOfDelivery: ['Metro'],
-      productType: ['frutas'],
-      contacts: ['(787)123-4567', 'email@email.com']
-    },
-    {
-      id: 2,
-      name: 'Finca Proventud',
-      areaOfDelivery: ['Sur', 'Centro'],
-      productType: ['Vegetales'],
-      contacts: ['another_one@email.com']
-    },
-    {
-      id: 3,
-      name: 'Finca Santa Lucia',
-      areaOfDelivery: ['Metro'],
-      productType: ['frutas'],
-      contacts: ['(787)765-4321']
-    },
-    {
-      id: 4,
-      name: 'Finca Santa Lucia',
-      areaOfDelivery: ['Metro'],
-      productType: ['frutas'],
-      contacts: ['(787)765-4321']
-    },
-    {
-      id: 5,
-      name: 'Finca Santa Lucia',
-      areaOfDelivery: ['Metro'],
-      productType: ['frutas'],
-      contacts: ['(787)765-4321']
-    }
-  ]);
+  Farm.find()
+    .exec()
+    .then(result => console.log(result));
+  res.json();
 });
 
 router.get('/test', (req, res) => {

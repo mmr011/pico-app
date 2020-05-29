@@ -9,6 +9,14 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
+mongoose.connect(
+  `mongodb+srv://mmr001:${process.env.MONGO_ATLAS_PW}@pico-cluster-ior5z.mongodb.net/test?retryWrites=true&w=majority`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use(errorHandler());
