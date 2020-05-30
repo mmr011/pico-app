@@ -9,7 +9,7 @@ h1 {
 }
 
 #title {
-  background-color: rgba(255, 165, 24, 0.85);
+  background-color: #ffa518;
   font-size: 3rem;
   color: #26303d;
   padding: 40px 100px;
@@ -19,7 +19,7 @@ h1 {
 }
 
 .App {
-  background-image: url("./background-img.jpg");
+  background-color: #768b89;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,11 +36,11 @@ h1 {
 }
 
 .container {
-  background-color: rgba(255, 109, 29, 0.9);
+  background-color: #ff6d1d;
   margin-bottom: 5%;
-  padding: 0 1%;
+  padding: 0px 6%;
   padding-bottom: 5px;
-  max-width: 54rem;
+  width: 68%;
   font-size: 1.3rem;
   text-align: center;
 }
@@ -63,19 +63,20 @@ h1 {
   transition: "height easi-in";
 }
 .farm-list .react-reveal {
-  width: 23rem;
+  width: 15rem;
   margin: 10px;
 }
 
 .farm {
+  background-color: #e1dede;
   display: inline-flex;
   flex-direction: column;
   text-align: left;
+  border: solid 0.7px #26303d;
   margin: 5px;
   padding: 10px;
-  width: 23rem;
+  width: 17rem;
   height: auto;
-  background-color: #e1dede;
   color: #26303d;
 }
 .farm h3 {
@@ -92,6 +93,21 @@ h1 {
 }
 .farm li {
   align-items: flex-start;
+}
+
+.info {
+  background-color: #26303d;
+  position: absolute;
+  margin: 10% 20%;
+  padding: 25px;
+  width: 60%;
+  box-shadow: 10px 5px 100px black;
+}
+.info:before {
+  position: absolute;
+  content: "";
+  background-color: #768b89;
+  width: 100%;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -7,8 +7,8 @@ import finder from '../Util/finder';
 
 const App = () =>  {
   const [farms, setFarms] = useState([]);
-  const [toggleInfo, setInfo] = useState(false);
-  const [toggleContact, setContact] = useState(false);
+  const [showInfo, setInfo] = useState(false);
+  const [showContact, setContact] = useState(false);
 
   useEffect(() => {
     finder()
@@ -19,17 +19,23 @@ const App = () =>  {
   }, []);
 
   const contactsIsHiding = () => {
-    if(toggleContact) {
-      console.log('shown');
+    if(showContact) {
       return <Contacts />;
     }
   };
 
+const infoIsHiding = () => {
+  if(showInfo) {
+    return <Info />
+  }
+}
+
   return (
     <div className="App">
       <header className='header'>
-        <button onClick={() => setInfo(!toggleInfo)}>¿Qué es Pico y Pala?</button>
+        <button onClick={() => setInfo(!showInfo)}>¿Qué es Pico y Pala?</button>
         {contactsIsHiding()}
+        {infoIsHiding()}
       </header>
       <h1 id='title'>Pico <span>y</span> Pala</h1>
       <div className='container'>
@@ -38,7 +44,7 @@ const App = () =>  {
           farms={farms}/>
       </div>
       <footer>
-        <span onClick={() => setContact(!toggleContact)}>Martín Molina</span>
+        <span onClick={() => setContact(!showContact)}>Martín Molina</span>
       </footer>
     </div>
   );

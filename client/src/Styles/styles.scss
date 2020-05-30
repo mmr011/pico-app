@@ -1,8 +1,9 @@
 $background-img: url('./background-img.jpg');
-$silver: hsla(0,4.8%,87.6%, 1);
-$papaya: hsla(36.6,100%,54.7%, .85);
-$orange: hsla(21.2,100%,55.7%, .9);
-$grey: hsla(213.9,23.2%,19.4%, 1);
+$silver: hsl(0,4.8%,87.6%);
+$papaya: hsl(36.6,100%,54.7%);
+$orange: hsl(21.2,100%,55.7%);
+$grey: hsl(213.9,23.2%,19.4%);
+$background-color: hsl(174,8.3%,50.5%);
 
 html {
   color: $silver;
@@ -25,7 +26,7 @@ h1{
 }
 
 .App {
-  background-image: $background-img;
+  background-color: $background-color;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -42,11 +43,11 @@ h1{
 
 }
 .container {
-  background-color: $orange;
+  background-color: #ff6d1d;
   margin-bottom: 5%;
-  padding: 0 1%;
+  padding: 0px 6%;
   padding-bottom: 5px;
-  max-width: 54rem;
+  width: 68%;
   font-size: 1.3rem;
   text-align: center;
   span {
@@ -68,20 +69,21 @@ h1{
   justify-content: center;
   transition: 'height easi-in';
   .react-reveal{
-    width: 23rem;
+    width: 15rem;
     margin: 10px;
   }
 }
 
 .farm {
+  background-color: $silver;
   display: inline-flex;
   flex-direction: column;
   text-align: left;
+  border: solid .7px $grey;
   margin: 5px;
   padding: 10px;
-  width: 23rem;
+  width: 17rem;
   height: auto;
-  background-color: $silver;
   color: $grey;
   h3 {
     font-family: 'Kanit', sans-serif;
@@ -97,5 +99,20 @@ h1{
   }
   li {
     align-items: flex-start;
+  }
+}
+
+.info {
+  background-color: $grey;
+  position: absolute;
+  margin: 10% 20%;
+  padding: 25px;
+  width: 60%;
+  box-shadow:  10px 5px 100px  black;
+  &:before{
+    position: absolute;
+    content: '';
+    background-color: $background-color;
+    width: 100%;
   }
 }

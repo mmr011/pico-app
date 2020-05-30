@@ -42,7 +42,7 @@ router.get('/sur', (req, res, next) => {
       next(err);
     } else {
       res.json({ farms: doc });
-    };
+    }
   });
 });
 
