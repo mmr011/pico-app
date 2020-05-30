@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Farm from './Farm';
 
-
-
 const FarmList = ({farms}) => {
   return (
       <div className="farm-list">

@@ -6,6 +6,7 @@ const finder = async (route) => {
       response = await fetch(`http://localhost:3001/${route}`);
     };
   const body = await response.json();
+  console.log(body.farms);
   return body;
 };
 export default finder;

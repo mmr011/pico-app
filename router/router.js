@@ -2,35 +2,84 @@ const express = require('express');
 const router = express.Router();
 const {mongoose, Farm} = require('./database');
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
   Farm.find()
     .exec()
-    .then(result => console.log(result));
-  res.json();
+    .then(result => res.json({farms: result}))
+    .catch(error => next(error));
 });
 
-router.get('/test', (req, res) => {
-  res.json([
-    {
-      id: 6,
-      name: 'Finca Caracoles',
-      areaOfDelivery: ['Norte', 'Metro', 'Este'],
-      productType: ['frutas', 'vegetales'],
-      contacts: ['https://www.facebook.com/someFarm']
-    }
-  ]);
+router.get('/metro', (req, res, next) => {
+  Farm.find({
+    area_of_delivery: "Metro"
+  }, function (err, doc) {
+    if(err) {
+      next(err);
+    } else {
+      console.log(doc);
+      res.json({ farms: doc });
+    };
+  });
 });
 
-router.get('/test2', (req, res) => {
-  res.json([
-    {
-      id: 7,
-      name: 'Hacienda Don Pedro',
-      areaOfDelivery: ['Este', 'Sur'],
-      productType: ['frutas', 'Vegetales', 'Viandas'],
-      contacts: ['https://www.facebook.com/someOtherFarm', 'yahoo@gmail.com']
-    }
-  ]);
+router.get('/norte', (req, res, next) => {
+  Farm.find({
+    area_of_delivery: "Norte"
+  }, function (err, doc) {
+    if(err) {
+      next(err);
+    } else {
+      res.json({ farms: doc })
+    };
+  });
+});
+
+router.get('/sur', (req, res, next) => {
+  Farm.find({
+    area_of_delivery: "Sur"
+  }, function (err, doc) {
+    if(err) {
+      next(err);
+    } else {
+      res.json({ farms: doc });
+    };
+  });
+});
+
+router.get('/este', (req, res, next) => {
+  Farm.find({
+    area_of_delivery: "Este"
+  }, function (err, doc) {
+    if(err) {
+      next(err);
+    } else {
+      res.json({ farms: doc });
+    };
+  });
+});
+
+router.get('/oeste', (req, res, next) => {
+  Farm.find({
+    area_of_delivery: "Oeste"
+  }, function (err, doc) {
+    if(err) {
+      next(err);
+    } else {
+      res.json({ farms: doc });
+    };
+  })
+});
+
+router.get('/centro', (req, res, next) => {
+  Farm.find({
+    area_of_delivery: "Centro"
+  }, function (err, doc) {
+    if(err) {
+      next(err);
+    } else {
+      res.json({ farms: doc });
+    };
+  })
 });
 
 module.exports = router;

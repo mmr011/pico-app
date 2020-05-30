@@ -11,12 +11,12 @@ const Farm = ({ farm }) => {
   }, [farm])
 
   return (
-    <Fade cascade when={fade} mountOnEnter={true} umountOnExit={true} >
+    <Fade when={fade} delay={550} mountOnEnter={true} umountOnExit={true} >
       <div className='farm'>
         <h3>{farm.name}</h3>
-        <h6>Entregas a: {farm.areaOfDelivery.join(', ')}</h6>
-        <h6>Productos: {farm.productType.join(', ')}</h6>
-        <h6>Contactos: {farm.contacts.join(', ')}</h6>
+        <h6>Entregas a: {farm.area_of_delivery.join(', ')}</h6>
+        <h6>Productos: {farm.product_type.join(', ')}</h6>
+        <h6>Contactos: {farm.contact_info.join(', ')}</h6>
       </div>
     </Fade>
   )

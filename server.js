@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 mongoose.connect(
-  `mongodb+srv://mmr001:${process.env.MONGO_ATLAS_PW}@pico-cluster-ior5z.mongodb.net/test?retryWrites=true&w=majority`,
+  `mongodb+srv://mmr001:${process.env.MONGO_ATLAS_PW}@pala-cluster-mylwd.mongodb.net/test?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true

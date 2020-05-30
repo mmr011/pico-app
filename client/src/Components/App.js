@@ -13,8 +13,8 @@ const App = () =>  {
   useEffect(() => {
     finder()
       .then(response => {
-        console.log(response);
-        setFarms(response)
+        console.log(response.farms);
+        setFarms(response.farms)
       })
   }, []);
 
@@ -23,20 +23,6 @@ const App = () =>  {
       console.log('shown');
       return <Contacts />;
     }
-  };
-
-  const getNewResponse = () => {
-    finder('test')
-      .then(response => {
-        setFarms(response)
-      });
-  };
-
-  const getOriginalResponse = () => {
-    finder()
-      .then(response => {
-        setFarms(response);
-      });
   };
 
   return (
